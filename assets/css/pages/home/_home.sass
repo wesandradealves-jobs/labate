@@ -1,0 +1,110 @@
+.pg-home
+	section:not(.destaque)
+		.container 
+			padding-top: 30px
+			padding-bottom: 30px
+	.destaque
+		background-position: center center 
+		background-size: cover 
+		background-repeat: no-repeat
+		margin-bottom: 60px
+		.container
+			@extend .flex 
+			flex-flow: column wrap 
+			justify-content: space-between 
+			padding-top: 40px
+			.mosaico
+				display: flex 
+				flex-flow: row wrap 
+				+mq(414px, max)
+					flex-flow: column wrap
+					margin: 90px auto -45px
+					width: 100%
+				justify-content: space-between
+				align-items: stretch
+				margin: 90px 0 -190px
+				.flip-container
+					width: 33.333%
+					+mq(414px, max)
+						width: 100%
+					padding: 5px
+					perspective: 1000px
+					&:hover 
+						.flipper
+							transform: rotateY(180deg)
+					>.flipper
+						height: 100%
+						width: 100%
+						+transition(600ms)
+						transform-style: preserve-3d
+						+mq(414px, max)
+							transform: rotateY(180deg)
+						>.back,
+						>.front
+							display: block 
+							height: 100%
+							width: 100%
+							background-position: center center 
+							background-size: cover 
+							background-repeat: no-repeat	
+							backface-visibility: hidden
+						>.front 
+							transform: rotateY(0deg)
+							z-index: 2
+						>.back 
+							background-color: #c91f24
+							padding: 20px 
+							color: white
+							display: flex !important
+							flex-flow: column wrap 
+							justify-content: space-between
+							position: absolute
+							transform: rotateY(180deg)
+							top: 0
+							left: 0
+							h3
+								+rem('font-size', 16px)
+							p 
+								flex: 1
+								+rem('font-size', 14px)	
+							a 
+								border: 2px white solid 
+								font-weight: bold
+								color: white
+								padding: 4px 10px 
+								text-align: center 
+								+rem('font-size', 14px)
+								max-width: 100px
+					&:nth-child(3),
+					&:nth-child(1)
+						height: 190px
+					&:nth-child(4),
+					&:nth-child(5)
+						height: 140px
+						top: -140px	
+						+mq(414px, max)
+							top: 0
+					&:nth-child(2)
+						height: 330px				
+			.filtros
+				@extend .flex 
+				flex-flow: column wrap 
+				background-color: #f8f8f8 
+				width: 290px
+				+mq(814px, max)
+					width: 100%
+					margin: 0 auto
+				margin-left: auto
+				.custom-checkbox 
+					margin-bottom: 15px
+				.btn 
+					width: 100%
+				> div 
+					padding: 25px 30px
+				.filtro-header
+					background-color: white 
+					text-align: center
+					p 
+						+rem('font-size', 14px)
+						strong 
+							+rem('font-size', 16px)

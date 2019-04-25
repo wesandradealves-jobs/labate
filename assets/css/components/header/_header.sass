@@ -1,0 +1,160 @@
+header
+	>.navigation
+		background-color: black 
+		border-top: 4px #c91f24 solid 
+		.nossas-marcas
+			display: none
+			position: absolute
+			top: 100%
+			left: 0
+			width: 100%
+			background-color: gray
+			// @extend .flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			align-items: stretch 
+			z-index: 50
+			#marcas_result 
+				ul 
+					height: 100%
+					@extend .flex
+					flex-flow: row wrap 
+					align-items: stretch 
+					background-position: center center
+					background-repeat: no-repeat
+					background-size: 32px
+					&.loading
+						background-image: url(https://thumbs.gfycat.com/ImprobablePertinentGraysquirrel-size_restricted.gif)
+					> li 
+						height: 100%
+						flex: 1
+						border-left: 1px gray solid
+						flex: 0 0 auto 
+						width: 25%
+						> a 
+							height: 100%
+							width: 100%
+							background-color: white 
+							background-position: center center 
+							background-size: 60%
+							background-repeat: no-repeat			
+							display: block
+							cursor: pointer				
+			>div
+				&:first-child
+					width: 400px
+					flex: 0 0 auto 
+					ul 
+						li 
+							padding: 10px 15px 
+							color: white 
+							+rem('font-size', 12px)
+							display: block
+							text-align: left
+							&:hover
+								background-color: white 
+								color: gray
+							&:not(:last-child)
+								border-bottom: 1px rgba(255,255,255,.35) solid
+					& + div 
+						flex: 1
+		>ul 
+			text-align: center 
+			>li 
+				display: inline-block 
+				vertical-align: middle 
+				position: initial
+				&:hover .nossas-marcas
+					@extend .flex				
+				i 
+					display: inline-block
+					vertical-align: middle 
+					margin-left: 4px
+				&:last-child
+					display: none
+				&:not(:last-child)
+					padding: 10px 15px
+					color: white
+					+rem('font-size', 14px)
+				&:hover
+					color: #c91f24	
+					ul 
+						color: white					
+	.header 
+		background-color: white
+		.container 
+			align-items: flex-end
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			padding-bottom: 20px
+			.logo 
+				flex: 0 0 auto
+				margin-top: -30px
+				+mq(814px, max)
+					margin: 0 auto
+					width: 100%
+					text-align: center 
+					.custom-logo-link
+						display: inline-block
+				z-index: 2
+			.searchbar
+				@extend .flex 
+				flex-flow: row 
+				justify-content: space-between 
+				align-items: center
+				padding: 5px 10px
+				+border(10px)
+				border: 1px #c91f24 solid
+				margin: 0 auto 
+				+mq(814px, max)
+					margin: 15px auto 0
+					bottom: 0
+				flex: 0 0 auto 
+				bottom: 20px
+				input
+					flex: 1 
+					padding-right: 10px
+					+rem('font-size', 13px)
+					font-weight: bold 
+					text-transform: uppercase
+					width: 430px
+					+mq(814px, max)
+						width: 100%
+				button 
+					flex: 0 0 auto
+					background-color: transparent
+	.topbar
+		background-color: #d1e4e3
+		+mq(814px, max)
+			.socialnetworks
+				display: block 
+				text-align: center 
+				width: 100%
+				margin: 10px auto 5px
+		.container 
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: flex-end 
+			+mq(814px, max)
+				justify-content: center
+				+rem('font-size', 10px)
+			align-items: center
+			color: black 
+			+rem('font-size', 12px)
+			padding-top: 2px
+			padding-bottom: 2px
+			p 
+				margin-right: 6px
+				&:not(:last-of-type)::after 
+					content: '|'
+					display: inline-block 
+					vertical-align: middle
+					margin: 0 0px 0 5px
+				img 
+					display: inline-block 
+					vertical-align: top
+					margin-right: 4px
+					line-height: 0
+			.endereco
+				line-height: 2

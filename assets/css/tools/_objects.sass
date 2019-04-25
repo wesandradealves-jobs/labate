@@ -1,0 +1,283 @@
+textarea,
+input
+    &[placeholder]
+        color: black
+        font-weight: 700
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: black
+        font-weight: 700
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: black
+        font-weight: 700
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: black
+        font-weight: 700
+        opacity: 1
+        text-overflow: ellipsis
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: calc(940px + 90px)
+    margin: 0 auto
+    padding-left: 45px
+    padding-right: 45px
+    +mq(1000px, max)
+        padding-left: 15px
+        padding-right: 15px
+        max-width: calc(940px + 30px)
+
+#wrap
+    min-height: 100vh
+    overflow: hidden
+    main 
+        z-index: 1
+
+.logo 
+    img,svg
+        display: block
+        height: auto
+        max-width: 100%
+
+.socialnetworks
+    >li 
+        display: inline-block 
+        vertical-align: middle
+        &:not(:last-child)
+            margin-right: 4px
+
+.custom-checkbox
+    position: relative 
+    display: block
+    input 
+        height: 100%
+        width: 100%
+        opacity: 0
+        z-index: 2
+        display: block 
+        position: absolute
+        top: 0
+        left: 0
+        cursor: pointer
+        &:checked + label
+            background-color: #c91f24
+            border-color: transparent
+            color: white
+    label 
+        z-index: 1
+        display: block
+        position: relative
+        +rem('font-size', 15px)
+        background-color: white
+        padding: 10px 5px
+        +border(5px)
+        border: 1px lightgray solid
+
+.btn 
+    cursor: pointer
+    display: block 
+    +border(5px)
+    padding: 10px 15px
+    text-align: center 
+    &.btn-1
+        background-color: #c91f24
+        color: white
+        +rem('font-size', 18px)
+        text-transform: uppercase 
+        font-weight: bold
+
+section
+    >.container
+        >.title
+            font-family: 'Roboto', sans-serif
+            font-weight: 100
+            text-transform: uppercase 
+            +rem('font-size', 30px)
+            margin: 0 auto 15px
+            text-align: center 
+            display: block
+            span
+                display: inline-block 
+                text-align: left
+                &::before
+                    content: ''
+                    display: block 
+                    height: 1px
+                    width: 100%
+                    background-color: #c91f24
+                    position: absolute 
+                    bottom: 0px     
+                &::after 
+                    content: ''
+                    display: block 
+                    width: 30px
+                    background-color: #c91f24
+                    margin-top: 4px
+                    height: 4px
+ul.produtos
+    @extend .flex 
+    flex-flow: row wrap 
+    justify-content: flex-start
+    align-items: stretch 
+    width: 100%
+    > * 
+        flex: 0 0 auto 
+        width: 33.333%
+        padding: 0 15px 30px
+        +mq(814px, max)
+            width: 50%
+            +mq(568px, max)
+                padding: 0
+                width: 100%
+        margin-bottom: 95px
+        position: relative
+        &:hover
+            z-index: 5 
+            h3 
+                opacity: 1
+        h3
+            background-color: #c91f24
+            color: white 
+            padding: 10px
+            +rem('font-size', 14px)
+            position: absolute 
+            top: 100%
+            left: 0
+            width: 100%
+            +transition(500ms)
+            opacity: 0
+            text-align: center
+            .btn 
+                border: 1px white solid 
+                +rem('font-size', 12px)
+                max-width: 120px 
+                margin: 5px auto 0
+                padding: 5px 10px
+        .panel 
+            position: absolute 
+            top: 0 
+            left: 0
+            z-index: 2
+            background-color: white
+            width: 100%
+            height: auto 
+            // @extend .flex 
+            display: none 
+            &.toggle 
+                @extend .flex
+            flex-flow: row wrap 
+            justify-content: space-between
+            align-items: flex-start 
+            .close 
+                position: absolute
+                top: 0
+                right: 0
+                display: block 
+                height: 20px
+                width: 20px
+                text-align: center 
+                line-height: 22px 
+                +rem('font-size', 17px)
+                background-color: #c91f24
+                color: white
+            * 
+                word-break: break-word
+            >.thumbnail 
+                width: 100px
+                height: 100px
+                flex: 0 0 auto 
+                border-bottom: 0
+                & + *
+                    flex: 1 
+                    padding: 15px
+                    h4 
+                        color: #c91f24
+                        +rem('font-size', 18px)
+                    h5
+                        margin: 15px 0
+                    p 
+                        +rem('font-size', 12px)
+                        text-align: justify
+                &::after 
+                    display: none
+        .thumbnail
+            width: 100%
+            height: 280px
+            background-position: center center 
+            background-size: contain 
+            background-repeat: no-repeat            
+            border-bottom: 1px #c91f24 solid 
+            &::after 
+                bottom: 0
+                content: ''
+                left: 0
+                position: absolute 
+                background-color: #c91f24
+                height: 4px
+                width: 30px
+                display: block
+.banner
+    height: 400px
+    background-position: center center 
+    background-size: cover 
+    background-repeat: no-repeat  
+    z-index: 1  
+    margin-bottom: -95px
+    text-shadow: 0 1px 2px #474747
+    .container 
+        top: -40px
+    .breadcrumbs
+        >li 
+            display: inline-block
+            vertical-align: middle 
+            +rem('font-size', 14px)
+            // text-shadow: 0px 1px 1px black
+            color: white
+            &:last-child
+                text-decoration: underline
+            &:not(:last-child)
+                &::after 
+                    content: '>>'
+                    font-family: 'Roboto', sans-serif
+                    font-weight: 100
+                    display: inline-block 
+                    vertical-align: middle 
+                    margin: 0 0px 0 5px
+                    color: #c91f24
+                    text-shadow: none
+    &::after 
+        content: ''
+        display: block 
+        position: absolute 
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+    .container 
+        height: 100%
+        @extend .flex 
+        flex-flow: column wrap 
+        justify-content: center
+        z-index: 2
+        h2
+            color: white
+            font-family: 'Roboto', sans-serif
+            font-weight: 500
+            +rem('font-size', 60px)
+            // text-shadow: 0px 1px 1px black
